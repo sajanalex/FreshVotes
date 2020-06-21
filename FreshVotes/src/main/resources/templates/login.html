@@ -1,0 +1,31 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>FreshVotes Login</title>
+</head>
+<body>
+<form action="" method="post">
+<fieldset>
+<legend>Please login</legend>
+<!-- use param.error -->
+<div th:if="${param.error!=null}">
+Failed to login.
+<div th:if="${SPRING_SECURITY_LAST_EXCEPTION!=null}">
+	Reason:<span th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}"></span>
+</div>
+</div>
+<!-- logout para.error -->
+<div th:if="${param.logout!=null}">
+You have been logged out.
+</div>
+<p>
+	<label for="username">User name</label> <input type="text" id="username" name="username" />
+</p>
+<p> <label for="password">Password</label> <input type="password" id="password" name="password" />
+</p>
+<div>
+<button type="submit" class="btn">Login</button>
+</div>
+</fieldset>
+</form>
+</body>
+</html>
