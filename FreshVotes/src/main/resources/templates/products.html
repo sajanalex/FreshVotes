@@ -1,0 +1,24 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<script th:replace="fragments/header :: headerElement"></script>
+<title>FreshVotes Product</title>
+
+</head>
+<body>
+<div class="container" style="margin-top:1.5em">
+	<div th:if="${product!=null}">
+		<h1>Products</h1>
+		<div th:each="product: ${products}">
+			<a th:href="@{/products/{productId}(productId=${product.id})}" th:text="${product.name}"></a>
+		</div>
+		
+	
+	</div>
+	
+	<div th:if="${product==null}">
+	<h2> Product doesn't exists</h2>
+	</div>
+</div>
+
+</body>
+</html>
