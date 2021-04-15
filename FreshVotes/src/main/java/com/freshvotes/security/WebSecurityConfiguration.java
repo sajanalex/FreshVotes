@@ -25,12 +25,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService)
 		.passwordEncoder(getPasswordEncoder());
-		
-		/*
-		 * auth.inMemoryAuthentication().passwordEncoder(getPasswordEncoder())
-		 * .withUser("sajan@alex.com") .password(getPasswordEncoder().encode("adiel"))
-		 * .roles("USER");
-		 */
+
 		 
 	}
 
